@@ -1,12 +1,12 @@
 import { createNamespace } from 'cls-hooked'
 
 const nsid = 'YFK8UoQQUuld1JS9No9Eykgd6Cg6FNQ2+Dai3WXPQgk='
-export const ns = createNamespace(nsid)
+const ns = createNamespace(nsid)
 
 /**
  * Hono middleware that is responsible for initializing the context for each request.
  */
-export const middleware = async (c, next) => {
+const middleware = async (c, next) => {
   await ns.runPromise(async () => {
     await next()
   })
@@ -18,7 +18,7 @@ export const middleware = async (c, next) => {
  * or if a value is not found for the specified key.
  * @param {string} key
  */
-export function get(key) {
+function get(key) {
   if (ns && ns.active) {
     return ns.get(key)
   }
@@ -31,8 +31,15 @@ export function get(key) {
  * @param {string} key
  * @param {*} value
  */
-export function set(key, value) {
+function set(key, value) {
   if (ns && ns.active) {
     ns.set(key, value)
   }
+}
+
+module.exports = {
+  middleware,
+  get,
+  set,
+  ns,
 }
