@@ -1,7 +1,6 @@
 [![coveralls](https://img.shields.io/coveralls/skonves/hono-http-context.svg)](https://coveralls.io/github/skonves/hono-http-context)
 [![npm](https://img.shields.io/npm/v/hono-http-context.svg)](https://www.npmjs.com/package/hono-http-context)
 [![npm](https://img.shields.io/npm/dm/hono-http-context.svg)](https://www.npmjs.com/package/hono-http-context)
-[![david](https://img.shields.io/david/skonves/hono-http-context.svg)](https://david-dm.org/skonves/hono-http-context)
 
 # Hono HTTP Context
 
