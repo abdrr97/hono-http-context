@@ -1,7 +1,8 @@
-import { createNamespace } from 'cls-hooked'
+'use strict'
+const cls = require('cls-hooked')
 
 const nsid = 'YFK8UoQQUuld1JS9No9Eykgd6Cg6FNQ2+Dai3WXPQgk='
-const ns = createNamespace(nsid)
+const ns = cls.createNamespace(nsid)
 
 /**
  * Hono middleware that is responsible for initializing the context for each request.
