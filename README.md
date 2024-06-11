@@ -1,4 +1,3 @@
-[![coveralls](https://img.shields.io/coveralls/skonves/hono-http-context.svg)](https://coveralls.io/github/skonves/hono-http-context)
 [![npm](https://img.shields.io/npm/v/hono-http-context.svg)](https://www.npmjs.com/package/hono-http-context)
 [![npm](https://img.shields.io/npm/dm/hono-http-context.svg)](https://www.npmjs.com/package/hono-http-context)
 
@@ -35,7 +34,7 @@ Set values based on the incoming request:
 ```ts
 // Example authorization middleware
 app.use(async (c, next) => {
-  var token = c.req.header('Authorization')
+  const token = c.req.header('Authorization')
   if (token) {
     httpContext.set('user', { id: '123' })
   }
@@ -50,7 +49,7 @@ import httpContext from 'hono-http-context'
 
 // Somewhere deep in the Todo Service
 function createTodoItem(title, content, callback) {
-  var user = httpContext.get('user')
+  const user = httpContext.get('user')
   db.insert({ title, content, userId: user.id }, callback)
 }
 ```
